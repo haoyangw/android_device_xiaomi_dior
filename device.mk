@@ -25,6 +25,12 @@ TARGET_SCREEN_WIDTH := 720
 $(call inherit-product-if-exists, vendor/xiaomi/dior/dior-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
+# Root the ROM even if it is user build, sorry I broke the rules :P
+ifeq ($(TARGET_BUILD_VARIANT),user)
+PRODUCT_PACKAGES += \
+    su
+endif
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
