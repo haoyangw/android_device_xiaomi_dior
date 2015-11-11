@@ -3,6 +3,7 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 #<src>                                              <mnt_point>    <type>    <mnt_flags and options>                                      <fs_mgr_flags>
+/dev/block/platform/msm_sdcc.1/by-name/system       /system        f2fs      ro,barrier=1                                                 wait
 /dev/block/platform/msm_sdcc.1/by-name/system       /system        ext4      ro,barrier=1                                                 wait
 /dev/block/platform/msm_sdcc.1/by-name/cache        /cache         ext4      noatime,nosuid,nodev,barrier=1                               wait,check
 /dev/block/platform/msm_sdcc.1/by-name/cache        /cache         f2fs      noatime,nosuid,nodev,rw,inline_xattr                         wait,check
