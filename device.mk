@@ -133,7 +133,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
-    sys.io.scheduler=bfq
+    sys.io.scheduler=sio
 
 # IPC router
 PRODUCT_COPY_FILES += \
