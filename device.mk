@@ -85,6 +85,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
+# Data
+PRODUCT_PACKAGES += \
+    librmnetctl \
+    rmnetcli
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8226 \
