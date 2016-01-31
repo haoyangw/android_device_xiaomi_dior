@@ -24,6 +24,11 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a7
 
+# Platform
+TARGET_BOARD_PLATFORM := msm8226
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
+USE_CLANG_PLATFORM_BUILD := true
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_FM := true
@@ -68,6 +73,7 @@ USE_DEVICE_SPECIFIC_GPS := true
 TARGET_PROVIDES_GPS_LOC_API := true
 
 # Graphics
+BOARD_EGL_CFG := device/xiaomi/dior/configs/egl.cfg
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
@@ -114,11 +120,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Memory
 MALLOC_IMPL := dlmalloc
-
-# Platform
-TARGET_BOARD_PLATFORM := msm8226
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
-USE_CLANG_PLATFORM_BUILD := true
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
