@@ -107,6 +107,17 @@ on boot
     chown system graphics /sys/class/graphics/fb0/dynamic_fps
     chmod 0664 /sys/class/graphics/fb0/dynamic_fps
 
+    # msm_thermal (for power HAL usage)
+    chown system system /sys/kernel/msm_thermal/user_maxfreq
+    chmod 0660 /sys/kernel/msm_thermal/user_maxfreq
+
+    # Set light thermal restrictions while running bootanimation
+    # [throttle_freq, throttle_temp, unthrottle_temp]
+    write /sys/kernel/msm_thermal/low_thresh "1593600 45 43"
+    write /sys/kernel/msm_thermal/mid_thresh "1344000 50 47"
+    write /sys/kernel/msm_thermal/high_thresh "1094400 55 53"
+    write /sys/kernel/msm_thermal/enabled 1
+
     chown system system /sys/class/leds/torch-light/brightness
     chown system system /sys/class/leds/button-backlight/brightness
 
