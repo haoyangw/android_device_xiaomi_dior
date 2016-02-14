@@ -54,6 +54,13 @@ on early-boot
     setrlimit 8 67108864 67108864
     write /sys/kernel/boot_adsp/boot 1
 
+    # Set light thermal restrictions while running bootanimation
+    # [throttle_freq, throttle_temp, unthrottle_temp]
+    write /sys/kernel/msm_thermal/low_thresh "1593600 40 37"
+    write /sys/kernel/msm_thermal/mid_thresh "1344000 46 43"
+    write /sys/kernel/msm_thermal/high_thresh "1190400 52 48"
+    write /sys/kernel/msm_thermal/enabled 1
+
 on boot
     # Switch to interactive and let PowerHAL configure it
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
@@ -111,14 +118,7 @@ on boot
     chown system system /sys/kernel/msm_thermal/user_maxfreq
     chmod 0664 /sys/kernel/msm_thermal/user_maxfreq
     write /sys/kernel/msm_thermal/user_maxfreq 0
-
-    # Set light thermal restrictions while running bootanimation
-    # [throttle_freq, throttle_temp, unthrottle_temp]
-    write /sys/kernel/msm_thermal/low_thresh "1593600 40 37"
-    write /sys/kernel/msm_thermal/mid_thresh "1344000 46 43"
-    write /sys/kernel/msm_thermal/high_thresh "1190400 52 48"
-    write /sys/kernel/msm_thermal/enabled 1
-
+    
     chown system system /sys/class/leds/flashlight/brightness
     chown system system /sys/class/leds/button-backlight/brightness
     chmod 0664 /sys/class/leds/flashlight/brightness
