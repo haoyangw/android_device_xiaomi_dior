@@ -27,7 +27,7 @@
 #include "power.h"
 
 #define CPUFREQ_PATH "/sys/devices/system/cpu/cpu0/cpufreq/"
-#define MSM_THERMAL "/sys/kernel/msm_thermal/user_maxfreq"
+#define MSM_THERMAL "/sys/kernel/msm_thermal/"
 #define INTERACTIVE_PATH "/sys/devices/system/cpu/cpufreq/interactive/"
 
 static pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
