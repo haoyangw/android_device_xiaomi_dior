@@ -73,6 +73,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
 PRODUCT_PACKAGES += \
+    Screencast \
     Snap \
     libxml2 \
     camera.msm8226 \
