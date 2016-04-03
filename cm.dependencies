@@ -10,9 +10,9 @@
     "branch"      : "cm-13.0"
   },
   {
-    "repository"  : "CyanogenMod/android_external_sony_boringssl-compat",
+    "repository"  : "sonyxperiadev/boringssl-compat",
     "target_path" : "external/sony/boringssl-compat",
-    "branch"      : "cm-13.0"
+    "branch"      : "master"
   },
   {
     "repository"  : "CyanogenMod/android_hardware_qcom_fm",
