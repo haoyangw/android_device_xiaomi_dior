@@ -75,7 +75,6 @@ USE_DEVICE_SPECIFIC_GPS := true
 TARGET_PROVIDES_GPS_LOC_API := true
 
 # Graphics
-BOARD_EGL_CFG := device/xiaomi/dior/configs/egl.cfg
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USE_COMPAT_GRALLOC_PERFORM := true
 TARGET_USES_ION := true
