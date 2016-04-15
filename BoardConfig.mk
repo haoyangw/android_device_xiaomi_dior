@@ -98,6 +98,9 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 # Hardware tunables
 BOARD_HARDWARE_CLASS := device/xiaomi/dior/cmhw
 
+# No old RPC for prop
+TARGET_NO_RPC := true
+
 # Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm

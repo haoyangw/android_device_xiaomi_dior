@@ -137,6 +137,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.gps.agps_provider=1
 
+# Graphics
+PRODUCT_PACKAGES += \
+	libGLES_android \
+	libstlport
+
 # Optional CM packages
 PRODUCT_PACKAGES += \
     LiveWallpapers \

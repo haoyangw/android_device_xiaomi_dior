@@ -18,6 +18,8 @@
         <value>3</value>
     </array>
     <array name="cpu.speeds">
+        <value>192000</value>
+        <value>249600</value>
         <value>300000</value>
         <value>384000</value>
         <value>600000</value>
@@ -30,6 +32,7 @@
         <value>1401600</value>
         <value>1497600</value>
         <value>1593600</value>
+        <value>1689600</value>
     </array>
     <item name="cpu.idle">2.8</item>
     <array name="cpu.active">
