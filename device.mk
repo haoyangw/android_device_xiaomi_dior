@@ -94,6 +94,9 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     rmnetcli
 
+# dexpreopt optimization
+PRODUCT_DEX_PREOPT_BOOT_FLAGS := --compiler-filter=space
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8226 \
