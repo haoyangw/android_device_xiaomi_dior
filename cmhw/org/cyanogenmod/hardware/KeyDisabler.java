@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,10 @@ package org.cyanogenmod.hardware;
 
 import org.cyanogenmod.hardware.util.FileUtils;
 
+import android.os.SystemProperties;
+
 import java.io.File;
+
 /*
  * Disable capacitive keys
  *
@@ -26,22 +29,23 @@ import java.io.File;
  * can be fully disabled for replacement with a soft navbar. You
  * really should not be using this on a device with mechanical or
  * otherwise visible-when-inactive keys
- *
  */
 
 public class KeyDisabler {
 
-    //Path
-    private static String CONTROL_PATH = "/sys/bus/i2c/drivers/atmel_mxt_ts/5-004b/keys_off";
-
-    public static boolean isSupported() { return true; }
+    private static String CONTROL_PATH = "/sys/devices/gpio_keys.75/disabled_keys";
+    
+    public static boolean isSupported() {
+        return true; 
+    }
 
     public static boolean isActive() {
         return (FileUtils.readOneLine(CONTROL_PATH).equals("0"));
     }
 
     public static boolean setActive(boolean state) {
-        return FileUtils.writeLine(CONTROL_PATH, (state ? "1" : "0"));
+	SystemProperties.set ( "softkey.change" ,  "1" );
+        return FileUtils.writeLine(CONTROL_PATH, (state ? "0" : "1"));
     }
 
 }
