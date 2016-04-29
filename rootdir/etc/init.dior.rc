@@ -113,8 +113,9 @@ on boot
     chmod 0666 /sys/class/leds/button-backlight/brightness
 
     # Key disabler
-    chown system system /sys/devices/gpio_keys.75/disabled_keys
-    chmod 0666 /sys/devices/gpio_keys.75/disabled_keys
+    chown root system /sys/bus/i2c/drivers/atmel_mxt_ts/5-004b/keys_off
+    chmod 0664 /sys/bus/i2c/drivers/atmel_mxt_ts/5-004b/keys_off
+    restorecon /sys/bus/i2c/drivers/atmel_mxt_ts/5-004b/keys_off
 
     chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
     chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
