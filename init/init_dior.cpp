@@ -87,8 +87,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
     property_set("ro.product.device", "dior");
     property_set("ro.build.product", "dior");
-    property_set("ro.build.description", "dior-user 4.4.4 KTU84P 5.9.16 release-keys");
-    property_set("ro.build.fingerprint", "Xiaomi/dior/dior:4.4.4/KTU84P/5.9.16:user/release-keys");
+    property_set("ro.build.description", "dior-user 4.4.4 KTU84P V7.2.3.0.KHIMIDA release-keys");
+    property_set("ro.build.fingerprint", "Xiaomi/dior/dior:4.4.4/KTU84P/V7.2.3.0.KHIMIDA:user/release-keys");
 
     /* HM NOTE LTE  */
     if (raw_id==2328) {
