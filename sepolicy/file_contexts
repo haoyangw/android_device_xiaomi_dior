@@ -10,3 +10,13 @@
 
 # Sensors
 /persist/misc/sensors(/.*)?                   u:object_r:sensors_persist_file:s0
+
+# Persist firmware filesystem
+/persist/prov(/.*)?                                         u:object_r:persist_drm_file:s0
+/persist/omadm(/.*)?                                        u:object_r:persist_omadm_file:s0
+/persist/omadm_cust_database(/.*)?                          u:object_r:persist_omadm_file:s0
+/persist/omadm_database(/.*)?                               u:object_r:persist_omadm_file:s0
+/persist/prop(/.*)?                                         u:object_r:persist_omadm_file:s0
+# Persist file to store apn
+/persist/telephony(/.*)?                                    u:object_r:persist_telephony_file:s0
+
