@@ -81,9 +81,8 @@ PRODUCT_PACKAGES += \
     libboringssl-compat
 
 # Charger
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    libhealthd.dior
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/sbin/chargeonlymode:root/sbin/chargeonlymode
 
 # Connectivity
 PRODUCT_PACKAGES += \
