@@ -45,13 +45,8 @@ void vendor_load_properties()
     rc = property_get("ro.board.platform", platform);
     if (!rc || !ISMATCH(platform, ANDROID_TARGET))
         return;
-    }
-    property_get("ro.boot.modem", modem);
 
-    property_set("ro.product.device", "dior");
-    property_set("ro.build.product", "dior");
-    property_set("ro.build.description", "dior-user 4.4.4 KTU84P V7.2.3.0.KHIMIDA release-keys");
-    property_set("ro.build.fingerprint", "Xiaomi/dior/dior:4.4.4/KTU84P/V7.2.3.0.KHIMIDA:user/release-keys");
+    property_get("ro.boot.modem", modem);
 
     if (strstr(modem, "LTEW")) {
         property_set("ro.product.model", "HM NOTE 1LTE");
@@ -60,4 +55,9 @@ void vendor_load_properties()
     else if (strstr(modem, "LTETD")) {
         property_set("ro.product.model", "HM NOTE 1LTE TD");
     }
+
+    property_set("ro.product.device", "dior");
+    property_set("ro.build.product", "dior");
+    property_set("ro.build.description", "dior-user 4.4.4 KTU84P V7.2.3.0.KHIMIDA release-keys");
+    property_set("ro.build.fingerprint", "Xiaomi/dior/dior:4.4.4/KTU84P/V7.2.3.0.KHIMIDA:user/release-keys");
 }
