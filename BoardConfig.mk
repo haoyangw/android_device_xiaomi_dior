@@ -106,9 +106,9 @@ BOARD_HARDWARE_CLASS := device/xiaomi/dior/cmhw
 TARGET_NO_RPC := true
 
 # Init
+TARGET_INIT_VENDOR_LIB := libinit_dior
+TARGET_RECOVERY_DEVICE_MODULES := libinit_dior
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/xiaomi/dior/init/init_dior.cpp
 
 # Kernel
 TARGET_TOOLS_PREFIX := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-UB-4.9/bin/arm-linux-androideabi-
