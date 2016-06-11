@@ -79,7 +79,7 @@ static power_profile profiles[PROFILE_MAX] = {
          * to avoid unneccessary writes to boostpulse */
         .boostpulse_duration = 0,
         .go_hispeed_load = 50,
-        .go_hispeed_load_off = 50,
+        .go_hispeed_load_off = 70,
         .hispeed_freq = 998400,
         .hispeed_freq_off = 998400,
         .io_is_busy = 1,
