@@ -1,25 +1,24 @@
 
-# Art
-dalvik.vm.dex2oat-flags=--no-watch-dog
-
 # Audio
 ro.qc.sdk.audio.ssr=false
 ro.qc.sdk.audio.fluencetype=fluence
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=true
-persist.audio.fluence.speaker=true
+persist.audio.fluence.speaker=false
+audio.offload.pcm.16bit.enable=false
+audio.offload.pcm.24bit.enable=false		
+audio.offload.buffer.size.kb=32		
+audio.offload.gapless.enabled=true		
+audio.offload.multiple.enabled=false
 audio.offload.video=false
 audio.offload.disable=true
+av.streaming.offload.enable=false
 use.voice.path.for.pcm.voip=true
 
 # Display
 ro.opengles.version=196608
 ro.sf.lcd_density=320
-debug.sf.hw=1
-debug.egl.hw=1
-debug.composition.type=c2d
 persist.hwc.mdpcomp.enable=true
-debug.mdpcomp.logs=0
 
 # Gps Smart Battery Savings (depends on sensor hub)
 persist.mot.gps.smart_battery=1
@@ -38,16 +37,6 @@ mm.enable.qcom_parser=37491
 # Telephony
 rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
-persist.rild.nitz_plmn=
-persist.rild.nitz_long_ons_0=
-persist.rild.nitz_long_ons_1=
-persist.rild.nitz_long_ons_2=
-persist.rild.nitz_long_ons_3=
-persist.rild.nitz_short_ons_0=
-persist.rild.nitz_short_ons_1=
-persist.rild.nitz_short_ons_2=
-persist.rild.nitz_short_ons_3=
-persist.sys.ssr.restart_level=3
 persist.radio.ramdump_sdcard=1
 ril.subscription.types=RUIM
 persist.data.netmgrd.qos.enable=true
@@ -56,9 +45,6 @@ persist.radio.apm_sim_not_pwdn=1
 persist.radio.dont_use_dsd=true
 persist.radio.msgtunnel.start=false
 ro.telephony.call_ring.multiple=false
-
-# Wifi
-ro.disableWifiApFirmwareReload=true
 
 # Hardware info
 ro.device.chipset=Qualcomm Snapdragon 400 MSM8928

@@ -17,23 +17,22 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from dior device
 $(call inherit-product, device/xiaomi/dior/device.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/dior/dior-vendor.mk)
 
 # Inherit some common CM stuff (mini)
-$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Product configuration
 PRODUCT_NAME := cm_dior
 PRODUCT_DEVICE := dior
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_MODEL := HMLTE
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+PRODUCT_MODEL := HM NOTE 1LTE
 
-TARGET_VENDOR := xiaomi
-TARGET_VENDOR_PRODUCT_NAME := dior
-TARGET_VENDOR_DEVICE_NAME := HMLTE
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Unofficial build id
 TARGET_UNOFFICIAL_BUILD_ID := ashish
 
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=dior PRODUCT_NAME=dior
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=dior

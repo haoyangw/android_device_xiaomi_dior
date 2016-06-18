@@ -22,14 +22,12 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, device/qcom/common/Android.mk)
-$(call inherit-product-if-exists, vendor/xiaomi/dior/dior-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-filter=speed \
+    dalvik.vm.dex2oat-flags=--no-watch-dog \
     dalvik.vm.dex2oat-swap=false \
     dalvik.vm.image-dex2oat-filter=speed
 
@@ -87,11 +85,6 @@ PRODUCT_COPY_FILES += \
 # Connectivity
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
-
-# Data
-PRODUCT_PACKAGES += \
-    librmnetctl \
-    rmnetcli
 
 # dexpreopt optimization
 PRODUCT_DEX_PREOPT_BOOT_FLAGS := --compiler-filter=space
@@ -303,7 +296,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0
+    persist.sys.wfd.virtual=0 \
+    ro.disableWifiApFirmwareReload=true
 
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
