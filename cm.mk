@@ -19,7 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/dior/device.mk)
 $(call inherit-product-if-exists, vendor/xiaomi/dior/dior-vendor.mk)
 
-# Inherit some common CM stuff (mini)
+# Inherit some common CM stuff (full)
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Product configuration

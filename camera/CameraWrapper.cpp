@@ -21,7 +21,7 @@
 *
 */
 
-#define LOG_NDEBUG 0
+//#define LOG_NDEBUG 0
 
 #define LOG_TAG "CameraWrapper"
 #include <cutils/log.h>
@@ -157,14 +157,7 @@ static char *camera_fixup_setparams(int id, const char *settings)
 
     /* Enable Morpho EasyHDR and disable flash in HDR mode */
     if (hdrMode && !videoMode) {
-        params.set("morpho-hdr", "true");
-        params.set("ae-bracket-hdr", "AE-Bracket");
-        params.set("capture-burst-exposures", "-6,8,0");
         params.set(android::CameraParameters::KEY_FLASH_MODE, android::CameraParameters::FLASH_MODE_OFF);
-    } else {
-        params.set("morpho-hdr", "false");
-        params.set("ae-bracket-hdr", "Off");
-        params.set("capture-burst-exposures", "0,0,0");
     }
 
 #if !LOG_NDEBUG
