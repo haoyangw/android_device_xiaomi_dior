@@ -87,7 +87,7 @@ static power_profile profiles[PROFILE_MAX] = {
         .sampling_down_factor = 100000,
         .target_loads = "80",
         .target_loads_off = "80",
-        .scaling_max_freq = 1689600,
+        .scaling_max_freq = 1593600,
         .scaling_min_freq = 998400,
         .scaling_min_freq_off = 300000,
     },

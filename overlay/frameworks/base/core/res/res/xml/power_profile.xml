@@ -30,7 +30,6 @@
         <value>1401600</value>
         <value>1497600</value>
         <value>1593600</value>
-        <value>1689600</value>
     </array>
     <item name="cpu.idle">2.8</item>
     <array name="cpu.active">
