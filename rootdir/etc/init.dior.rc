@@ -195,10 +195,10 @@ on post-fs-data
     chown system system /sys/class/timed_output/vibrator/amp
     chmod 0664 /sys/class/timed_output/vibrator/amp
 
-    # Torch-light and button-backlight
-    chown system camera /sys/class/leds/torch-light/brightness
+    # flashlight and button-backlight
+    chown system camera /sys/class/leds/flashlight/brightness
     chown system system /sys/class/leds/button-backlight/brightness
-    chmod 0666 /sys/class/leds/torch-light/brightness
+    chmod 0666 /sys/class/leds/flashlight/brightness
     chmod 0666 /sys/class/leds/button-backlight/brightness
 
     # Key disabler
