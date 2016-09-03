@@ -40,11 +40,15 @@ on init
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
+    write /proc/sys/vm/page-cluster 0
+
     # Symbols required for blobs
     export LD_PRELOAD "/system/lib/libboringssl-compat.so"
 
 on fs
     mount_all fstab.dior
+    swapon_all fstab.dior
+
     restorecon_recursive /persist
 
 on early-boot
@@ -125,6 +129,14 @@ on boot
     chown system system /sys/module/radio_iris_transport/parameters/fmsmd_set
     chmod 0660 /sys/module/radio_iris_transport/parameters/fmsmd_set
 
+    # Create NETMGR daemon socket area
+    mkdir /dev/socket/netmgr 0750 radio radio
+
+    # Assign TCP buffer thresholds to be ceiling value of technology maximums
+    # Increased technology maximums should be reflected here.
+    write /proc/sys/net/core/rmem_max  2097152
+    write /proc/sys/net/core/wmem_max  2097152
+
     # Prevents permission denied error for telephony
     chmod 0644 /proc/cmdline
 
@@ -148,6 +160,9 @@ on boot
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
 
 on post-fs-data
+    # Create directory for TZ Apps
+    mkdir /data/misc/qsee 0770 system system
+
     #Create directories for Location services
     mkdir /data/misc/location 0770 gps gps
     mkdir /data/misc/location/mq 0770 gps gps
@@ -205,7 +220,7 @@ on post-fs-data
     chown root system /sys/bus/i2c/drivers/atmel_mxt_ts/5-004b/keys_off
     chmod 0664 /sys/bus/i2c/drivers/atmel_mxt_ts/5-004b/keys_off
 
-service irsc_util /system/bin/logwrapper /system/bin/irsc_util "/etc/sec_config"
+service irsc_util /system/bin/irsc_util "/etc/sec_config"
     class main
     user root
     oneshot
@@ -213,7 +228,6 @@ service irsc_util /system/bin/logwrapper /system/bin/irsc_util "/etc/sec_config"
 service rmt_storage /system/bin/rmt_storage
     class core
     user root
-    group system
 
 service rfs_access /system/bin/rfs_access
     class core
@@ -226,6 +240,7 @@ service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
     oneshot
 
 on property:vold.decrypt=trigger_restart_framework
+    start config_bt_addr
     start config_bluetooth
 
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
@@ -336,6 +351,10 @@ service dhcpcd_bnep3 /system/bin/dhcpcd -BKLG
 service dhcpcd_bnep4 /system/bin/dhcpcd -BKLG
     disabled
     oneshot
+
+on property:ro.data.large_tcp_window_size=true
+    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
+    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
 service ril-daemon2 /system/bin/rild -c 2
     class main
