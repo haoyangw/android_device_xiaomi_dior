@@ -124,9 +124,6 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# Memory
-MALLOC_IMPL := dlmalloc
-
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
