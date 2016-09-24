@@ -77,10 +77,6 @@ PRODUCT_PACKAGES += \
     camera.msm8226 \
     libboringssl-compat
 
-# Charger
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/sbin/chargeonlymode:root/sbin/chargeonlymode
-
 # Connectivity
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
