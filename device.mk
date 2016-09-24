@@ -209,10 +209,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true \
     ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
-# CMActions
-PRODUCT_PACKAGES += \
-    CMActions
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.dior \
