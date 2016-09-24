@@ -17,14 +17,13 @@
 package org.cyanogenmod.hardware;
 
 import org.cyanogenmod.internal.util.FileUtils;
-import java.io.File;
 
 public class VibratorHW {
 
-    private static String LEVEL_PATH = "/sys/class/timed_output/vibrator/amp";
+    private static String AMP_PATH = "/sys/class/timed_output/vibrator/amp";
 
     public static boolean isSupported() {
-        return new File(LEVEL_PATH).exists();
+        return FileUtils.isFileWritable(AMP_PATH);
     }
 
     public static int getMaxIntensity()  {
@@ -40,7 +39,7 @@ public class VibratorHW {
     }
 
     public static int getCurIntensity()  {
-        return Integer.parseInt(FileUtils.readOneLine(LEVEL_PATH));
+        return Integer.parseInt(FileUtils.readOneLine(AMP_PATH));
     }
 
     public static int getDefaultIntensity()  {
@@ -48,6 +47,6 @@ public class VibratorHW {
     }
 
     public static boolean setIntensity(int intensity)  {
-        return FileUtils.writeLine(LEVEL_PATH, String.valueOf(intensity));
+        return FileUtils.writeLine(AMP_PATH, String.valueOf(intensity));
     }
 }
