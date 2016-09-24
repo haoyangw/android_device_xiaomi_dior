@@ -244,7 +244,6 @@ PRODUCT_PACKAGES += \
     WCNSS_qcom_wlan_nv_h3w.bin
 
 PRODUCT_PACKAGES += \
-    dhcpcd.conf \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf
