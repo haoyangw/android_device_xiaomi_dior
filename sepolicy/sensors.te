@@ -30,3 +30,4 @@ allow sensors property_socket:sock_file write;
 allow sensors system_data_file:file open;
 allow sensors system_prop:property_service set;
 set_prop(sensors, sensors_prop)
+allow sensors persist_misc_file:dir getattr;
