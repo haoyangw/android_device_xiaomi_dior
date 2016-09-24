@@ -29,3 +29,4 @@ allow sensors persist_file:file { read write getattr open setattr };
 allow sensors property_socket:sock_file write;
 allow sensors system_data_file:file open;
 allow sensors system_prop:property_service set;
+set_prop(sensors, sensors_prop)
