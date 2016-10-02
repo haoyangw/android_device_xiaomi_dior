@@ -2,7 +2,7 @@
   {
     "repository"  : "CyanogenMod/android_device_qcom_common",
     "target_path" : "device/qcom/common",
-    "branch"      : "staging/cm-14.0"
+    "branch"      : "cm-14.0"
   },
   {
     "repository"  : "sonyxperiadev/boringssl-compat",
