@@ -72,6 +72,10 @@ PRODUCT_PACKAGES += \
     camera.msm8226 \
     libboringssl-compat
 
+#CMActions
+PRODUCT_PACKAGES += \
+    CMActions
+
 # Connectivity
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
