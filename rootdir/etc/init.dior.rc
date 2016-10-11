@@ -42,9 +42,6 @@ on init
 
     write /proc/sys/vm/page-cluster 0
 
-    # Symbols required for blobs
-    export LD_PRELOAD "/system/lib/libboringssl-compat.so"
-
 on fs
     mount_all fstab.dior
     swapon_all fstab.dior

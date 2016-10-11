@@ -64,13 +64,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.cabl=0
 
 # Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=1
-
 PRODUCT_PACKAGES += \
     libxml2 \
-    camera.msm8226 \
-    libboringssl-compat
+    camera.msm8226
 
 #CMActions
 PRODUCT_PACKAGES += \
