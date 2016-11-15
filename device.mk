@@ -71,8 +71,8 @@ PRODUCT_PACKAGES += \
     camera.msm8226
 
 #CMActions
-PRODUCT_PACKAGES += \
-    CMActions
+#PRODUCT_PACKAGES += \
+#    CMActions
 
 # Connectivity
 PRODUCT_PACKAGES += \
@@ -89,6 +89,10 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
+
+# DT
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/dt.img:dt.img
 
 # Ebtables
 PRODUCT_PACKAGES += \
@@ -145,6 +149,10 @@ PRODUCT_COPY_FILES += \
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8226
+
+# Kernel
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/kernel:$(PRODUCT_OUT)/kernel
 
 # Lights
 PRODUCT_PACKAGES += \

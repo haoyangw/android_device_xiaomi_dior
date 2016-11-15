@@ -26,6 +26,10 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a7
 
+# ART
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+
 # Platform
 TARGET_BOARD_PLATFORM := msm8226
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
@@ -56,7 +60,8 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
 # Encryption
-TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := false
+TARGET_CRYPTFS_HW_PATH := device/xiaomi/dior/cryptfs_hw
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 16777216
@@ -95,7 +100,7 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Hardware tunables
-BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw
+#BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw
 
 # No old RPC for prop
 TARGET_NO_RPC := true
@@ -109,9 +114,9 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_dior
 TARGET_UNIFIED_DEVICE := true
 
 # Kernel
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 TARGET_KERNEL_SOURCE := kernel/xiaomi/dior
-TARGET_KERNEL_CONFIG := dior_custom_defconfig
+#TARGET_KERNEL_CONFIG := dior_custom_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=dior zcache.enabled=1 user_debug=31 msm_rtb.filter=0x37 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
